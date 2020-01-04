@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-//using Photon.Pun;
+using Photon.Pun;
 using UnityEngine;
 
 public class CameraMoving : MonoBehaviour
 {
-    //private Transform playerTransform;
-    //private PhotonView playerPhotonView;
+    private Transform playerTransform;
+    private PhotonView playerPhotonView;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class CameraMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* if ( playerTransform )
+        if ( playerTransform )
         {
             transform.position = new Vector3(playerTransform.position.x + 4f, playerTransform.position.y + 2f, transform.position.z);
         }
@@ -34,7 +34,7 @@ public class CameraMoving : MonoBehaviour
                     playerTransform = player.transform;
                 }
             }
-        }*/
+        }
            
     }
 
