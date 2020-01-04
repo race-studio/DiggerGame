@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class PlayerControls : MonoBehaviour {
+public class PlayerScript : MonoBehaviour {
+
+  //  public Camera mainCamera;
 
     private PhotonView photonView;
 
