@@ -32,6 +32,7 @@ public class CameraMoving : MonoBehaviour
                 if (playerPhotonView.IsMine)
                 {
                     playerTransform = player.transform;
+                    break;
                 }
             }
         }
