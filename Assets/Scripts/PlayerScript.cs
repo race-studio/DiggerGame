@@ -47,6 +47,8 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (!photonView.IsMine) return;
+
         // = GameObject.FindGameObjectsWithTag("cheker")
         if (Input.GetButtonDown("Jump"))
         {
@@ -60,8 +62,6 @@ public class PlayerScript : MonoBehaviour {
     void getInput()
     {
         //Для тестов персонажа закомментировать эту строчку, создать плеера на сцене и закинуть его трансформ в слот на MainCamer
-
-        if (!photonView.IsMine) return;
         dir = Vector2.zero;
 
         if (Input.GetKey(KeyCode.LeftArrow))
