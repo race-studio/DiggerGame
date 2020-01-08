@@ -9,10 +9,10 @@ public class CameraMoving : MonoBehaviour
     public GameObject targetPlayer;
     private PhotonView playerPhotonView;
 
+    private float damping = 2f;
     // Start is called before the first frame update
     void Start()
     {
-        //if (!PhotonView.IsMine) return;
     }
 
     // Update is called once per frame
@@ -20,8 +20,18 @@ public class CameraMoving : MonoBehaviour
     {
         if (targetPlayer)
         {
-           // float y = (float)Math.Round(targetPlayer.transform.position.y, 1);
-            transform.position = new Vector3(targetPlayer.transform.position.x + 4f, targetPlayer.transform.position.y + 2f, transform.position.z);
+             float xOffset = 4f;
+
+            if (!targetPlayer.GetComponent<PlayerScript>().isRight) xOffset = -3f;
+
+             float interpolation = damping * Time.deltaTime;
+
+             Vector3 position = transform.position;
+             position.y = Mathf.Lerp(transform.position.y, targetPlayer.transform.position.y + 1f, interpolation);
+             position.x = Mathf.Lerp(transform.position.x, targetPlayer.transform.position.x + xOffset, interpolation);
+
+             transform.position = position;
+
         }
         else
         {
@@ -40,6 +50,5 @@ public class CameraMoving : MonoBehaviour
         }
            
     }
-
 }
 

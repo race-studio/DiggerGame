@@ -47,7 +47,6 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log( "Before " + rb.velocity);
         // = GameObject.FindGameObjectsWithTag("cheker")
         if (Input.GetButtonDown("Jump"))
         {
@@ -56,10 +55,6 @@ public class PlayerScript : MonoBehaviour {
 
         getInput();
         rb.velocity = new Vector2(dir.x * speed, rb.velocity.y); //dir * Time.deltaTime * 60 * 5;
-
-        Debug.Log("After " + rb.velocity);
-
-
     }
 
     void getInput()
