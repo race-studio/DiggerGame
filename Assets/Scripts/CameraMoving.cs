@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Photon.Pun;
 using UnityEngine;
 
 public class CameraMoving : MonoBehaviour
 {
     public GameObject targetPlayer;
-    private PhotonView playerPhotonView;
 
     private float damping = 2f;
     // Start is called before the first frame update
@@ -39,13 +37,12 @@ public class CameraMoving : MonoBehaviour
 
             foreach (GameObject player in players)
             {
-                playerPhotonView = player.GetComponent<PhotonView>();
 
-                if (playerPhotonView.IsMine)
+               /* if ()
                 {
                     targetPlayer = player;
                     break;
-                }
+                }*/
             }
         }
            

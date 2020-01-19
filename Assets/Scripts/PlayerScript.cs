@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Photon.Pun;
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody2D))]
@@ -8,7 +7,6 @@ public class PlayerScript : MonoBehaviour {
 
     //  public Camera mainCamera;
 
-    private PhotonView photonView;
     private Rigidbody2D rb;
 
     [SerializeField]
@@ -23,7 +21,6 @@ public class PlayerScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        photonView = GetComponent<PhotonView>();
         
         rb = GetComponent<Rigidbody2D> ();
     }
@@ -47,7 +44,6 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (!photonView.IsMine) return;
 
         // = GameObject.FindGameObjectsWithTag("cheker")
         if (Input.GetButtonDown("Jump"))
