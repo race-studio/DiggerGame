@@ -23,6 +23,11 @@ public class PlayerScript : MonoBehaviour {
     void Start () {
         
         rb = GetComponent<Rigidbody2D> ();
+        GameObject[] chekers = GameObject.FindGameObjectsWithTag("cheker");
+
+        foreach (GameObject cheker in chekers){
+            cirTarg = cheker.transform;
+        }
     }
 
     bool onGround(){
@@ -46,7 +51,7 @@ public class PlayerScript : MonoBehaviour {
     {
 
         // = GameObject.FindGameObjectsWithTag("cheker")
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && onGround())
         {
             Jump();
         }
