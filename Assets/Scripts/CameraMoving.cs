@@ -20,13 +20,13 @@ public class CameraMoving : MonoBehaviour
         {
              float xOffset = 4f;
 
-            if (!targetPlayer.GetComponent<PlayerScript>().isRight) xOffset = -3f;
+             if (!targetPlayer.GetComponent<PlayerScript>().isRight) xOffset = -3f;
 
              float interpolation = damping * Time.deltaTime;
 
              Vector3 position = transform.position;
              position.y = Mathf.Lerp(transform.position.y, targetPlayer.transform.position.y + 1f, interpolation);
-             position.x = Mathf.Lerp(transform.position.x, targetPlayer.transform.position.x + xOffset, interpolation);
+             position.x = Mathf.Lerp(transform.position.x, targetPlayer.transform.position.x , interpolation);
 
              transform.position = position;
 
