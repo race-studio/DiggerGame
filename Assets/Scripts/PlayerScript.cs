@@ -14,8 +14,8 @@ public class PlayerScript : MonoBehaviour {
     public float speed;
 
     public Transform cirTarg;
-    public float jumpForce = 20f;
-    private float radCir = 0.5f;
+    public float jumpForce = 1100f;
+    private float radCir = 1f;
 
     private float fireRate = 0.2f;
     private float nextFire;
