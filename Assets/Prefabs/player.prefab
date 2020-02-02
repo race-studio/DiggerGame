@@ -176,5 +176,4 @@ MonoBehaviour:
   speed: 5
   cirTarg: {fileID: 0}
   jumpForce: 1100
-  radCir: 1
   isRight: 1

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public float bulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,9 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 }
